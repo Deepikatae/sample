@@ -1,0 +1,116 @@
+Account Lookup:
++++++++++++++++++
+
+SPS XAPI -> AccountPAPI
+
+GET : /accounts
+
+
+{
+   "id":"1234567891",
+   "status":"active",
+   "premise":{
+      "address":{
+         "subBuildingName":"",
+         "buildingName":"",
+         "dependentThoroughfareName":"",
+         "houseNumber":"1",
+         "streetDescription":"ADELAIDE ROAD",
+         "dependentLocality":"",
+         "doubleDependentLocality":"NORTH END",
+         "town":"Orpington",
+         "postcode":"NW3 5EB",
+         "country":""
+      }
+   },
+   "classifiers":[
+      {
+         "classificationType":""
+      }
+   ],
+   "accountParties":{
+      "id":"",
+      "partyRoles":[
+         {
+            "name":""
+         }
+      ],
+      "personDetails":{
+         "title":"",
+         "communicationChannels":[
+            {
+               "type":"Telephone",
+               "value":"",
+               "adittionalValue":"",
+               "optIn":"",
+               "preferredChannel":""
+            },
+            {
+               "type":"Mobile",
+               "value":"",
+               "adittionalValue":"",
+               "optIn":"",
+               "preferredChannel":""
+            },
+            {
+               "type":"Email",
+               "value":"",
+               "adittionalValue":"",
+               "optIn":"",
+               "preferredChannel":""
+            }
+         ]
+      }
+   }
+}
+
+
+Address LookUp: 
+++++++++++++++++
+
+SPS XAPI (ToDo) -> GeoFeaturePAPI (completed)
+
+GET : /geofeatures/zones/locations/premises/address
+
+Input:
+
+?houseNumber
+?subBuildingName
+?buildingName
+?streetDescription
+?town
+?postcode
+
+
+OutPut:
+
+{
+    "geofeature": {
+        "zones": [
+            {
+                "locations": [
+                    {
+                        "premises": [
+                            {
+                                "premiseId": "1111111111",
+                                "propertyType": "MT",
+                                "address": {
+                                    "subBuildingName": "",
+                                    "buildingName": "",
+                                    "dependentThoroughfareName": "",
+                                    "houseNumber": "1",
+                                    "streetDescription": "ADELAIDE ROAD",
+                                    "dependentLocality": "",
+                                    "doubleDependentLocality": "NORTH END",
+                                    "town": "Orpington",
+                                    "postcode": "NW3 5EB"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+
